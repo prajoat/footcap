@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+
+  
+  
+  <link rel="stylesheet" href="./assets/css/account.css">
+
+  
+  
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  
+
+  <div class="container">
+    <form action="" id="account">
+        <div class="alert">registered successfully</div>
+
+        <div class="inputBox">
+            <input type="text" id="name" placeholder="Name" />
+        </div>
+
+        <div class="inputBox">
+            <input type="email" id="emailid" placeholder="Email" />
+        </div>
+
+        <div class="inputBox">
+            <input type="password" id="password" placeholder="Password" />
+        </div>
+        
+
+        <div class="inputBox" style="display: flex; flex-direction: column; align-items: center;">
+            <button type="submit">Register</button>
+            <a href="login.html" class="button-link">Login</a>
+        </div>
+        
+        
+        
+    </form>
+</div>
+<script>
+  // Function to register a user
+  function registerUser() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('emailid').value;
+    const password = document.getElementById('password').value;
+
+    // Store user data in local storage
+    localStorage.setItem('registeredUser', JSON.stringify({ name, email, password }));
+
+    // You can add more logic here like checking for duplicate emails, etc.
+  }
+</script>
+<script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+
+<script src="./assets/js/account.js"></script>
+</body>
+</html>

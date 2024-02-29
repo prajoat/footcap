@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footcap - Find your footware</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0-beta2/css/all.min.css" integrity="sha384-Vk7/47QRWzpD3Uz5nqzGP5mL8UxF/lxRkfZuL5Xf5tc5P7lxfZGuYS0VN90bP5Zj" crossorigin="anonymous">
+
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload banner
+  -->
+  <link rel="preload" href="./assets/images/hero-banner.png" as="image">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo.svg" width="160" height="50" alt="Footcap logo">
+      </a>
+
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" width="190" height="50" alt="Footcap logo">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="products2.html" class="navbar-link">products</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="mens.html" class="navbar-link">mens</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="womens.html" class="navbar-link">womens</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="kids.html" class="navbar-link">kids</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="casual.html" class="navbar-link">casual</a>
+          </li>
+
+        </ul>
+
+        <ul class="nav-action-list">
+
+          <li>
+            <button class="nav-action-btn">
+              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+
+              <span class="nav-action-text">Search</span>
+            </button>
+          </li>
+
+          <li>
+            <a href="acount.html" class="nav-action-btn">
+              <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+              <span class="nav-action-text">Login / Register</span>
+            </a>
+          </li>
+
+          <li>
+            <button class="nav-action-btn">
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+              <span class="nav-action-text">Wishlist</span>
+
+              <data class="nav-action-badge" value="5" aria-hidden="true"></data>
+            </button>
+          </li>
+
+          <li>
+            <button class="nav-action-btn">
+              <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
+
+              
+
+              
+            </button>
+          </li>
+
+        </ul>
+
+      </nav>
+      
+
+    </div>
+  </header>
+  <!-- ... (your HTML code) -->
+
+  <div class="cart-container">
+    <div class="cart">
+      <!-- Existing cart items go here -->
+    </div>
+  </div>
+  
+  <div class="cart-subtotal">
+    <p>Subtotal: <span id="subtotal">0.00</span></p>
+    <a href="checkout.html">
+      <button id="checkout" class="btn">Checkout</button>
+    </a>
+  </div>
+  
+  
+  <script>
+    // JavaScript to retrieve and display items in the cart
+    var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  
+    var cartContainer = document.querySelector('.cart-container');
+  
+    // Function to remove an item from the cart
+    function removeItem(index) {
+      cartItems.splice(index, 1); // Remove the item from the array
+      localStorage.setItem('cart', JSON.stringify(cartItems)); // Update the cart in local storage
+      displayCartItems(); // Re-display the updated cart
+      calculateSubtotal(); // Recalculate the subtotal
+    }
+  
+    // Function to display the cart items
+    function displayCartItems() {
+      cartContainer.innerHTML = ''; // Clear the cart container
+  
+      if (cartItems.length > 0) {
+        cartItems.forEach(function (item, index) {
+          var cartItemDiv = document.createElement('div');
+          cartItemDiv.classList.add('cart-item');
+          cartItemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div>
+              <h3>${item.name}</h3>
+              <p>Size: ${item.size}</p>
+              <p>Price: Rs.${item.price}</p>
+              <p>Quantity: ${item.quantity}</p>
+              <button class="remove-item" data-index="${index}">Remove</button>
+            </div>
+          `;
+  
+          var removeButton = cartItemDiv.querySelector('.remove-item');
+          removeButton.addEventListener('click', function () {
+            var index = removeButton.getAttribute('data-index');
+            removeItem(index); // Call the removeItem function when the remove button is clicked
+          });
+  
+          cartContainer.appendChild(cartItemDiv);
+        });
+      } else {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+      }
+    }
+  
+    displayCartItems();
+  
+    // ... (The rest of your code for calculating subtotal and handling checkout)
+  </script>
+  
+  
+  <script>
+    // Function to calculate the subtotal
+    function calculateSubtotal() {
+      var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      var subtotal = 0;
+  
+      // Calculate the subtotal based on the items in the cart
+      for (var i = 0; i < cartItems.length; i++) {
+        subtotal += cartItems[i].price * cartItems[i].quantity;
+      }
+  
+      // Display the subtotal on the page
+      document.getElementById('subtotal').textContent = 'Rs:' + subtotal.toFixed(2);
+  
+      // Save the subtotal to Local Storage
+      localStorage.setItem('subtotal', subtotal);
+    }
+  
+    // Call the calculateSubtotal function to display the initial subtotal
+    calculateSubtotal();
+  </script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  
+  
+  
+
+<style>
+  /* Add this CSS to your cart.html page */
+  .cart-item img {
+    max-width: 150px; /* You can adjust the width as needed */
+    max-height: 150px; /* You can adjust the height as needed */
+  }
+  .cart-container {
+  margin-right: 20px; /* Adjust this margin to control the separation */
+}
+
+.cart-subtotal {
+  background-color: #f4f4f4; /* You can choose a background color */
+  padding: 10px;
+  border: 1px solid #ccc; /* Add a border for separation */
+  text-align: left;
+}
+
+</style>
+  
+
+<!-- ... (your HTML code) -->
+</body>
+</html>
+

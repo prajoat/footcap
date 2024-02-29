@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footcap - Find your footware</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  
+  
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload banner
+  -->
+  <link rel="preload" href="./assets/images/hero-banner.png" as="image">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo.svg" width="160" height="50" alt="Footcap logo">
+      </a>
+
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" width="190" height="50" alt="Footcap logo">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="products2.html" class="navbar-link">Products</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="mens.html" class="navbar-link">Mens</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="womens.html" class="navbar-link">Womens</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="kids.html" class="navbar-link">Kids</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="casual.html" class="navbar-link">Casual</a>
+          </li>
+
+        </ul>
+
+        <ul class="nav-action-list">
+
+          <li>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button class="nav-action-btn" id="search-button">
+                    <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                    <span class="nav-action-text">Search</span>
+                </button>
+            </div>
+        </li>
+        
+
+          <li>
+            <a href="acount.html" class="nav-action-btn">
+              <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+              <span class="nav-action-text">Login / Register</span>
+            </a>
+          </li>
+
+          <li>
+            <button class="nav-action-btn">
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+              <span class="nav-action-text">Wishlist</span>
+
+              
+            </button>
+          </li>
+
+          <li>
+            <a href="cart.html">
+              <button class="nav-action-btn">
+                <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
+                
+              </button>
+            </a>
+          </li>
+          
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+  <div class="small-container">
+    <div class="row row-2">
+        <h2>All Products</h2>
+        <select>
+            <option>Fiter</option>
+            <option> by price</option>
+            <option> by popularity</option>
+            <option> by rating</option>
+            <option> by sale</option>
+        </select>
+    </div>
+    
+    
+    <!--<h2 class="title" >Featured Products</h2>-->
+    <div class="row">
+            <div class="col-4">
+                <a href="product6.html"><img src="./assets/images/j10.webp"></a>
+                <a href="product6.html"><h4>Air Jordan 1 Mid SE</h4></a>
+                <div class="rating">
+                    
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <p>Rs.12925.00</p>
+            </div>
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j2.webp"></a>
+                <h4>Lace-Up Running Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half-o" ></i>
+                </div>
+                <p>$35.00</p>
+            </div>
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j3.webp"></a>
+                <h4>Lace Fastening Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <p>$15.00</p>
+            </div>
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j4.webp"></a>
+                <h4>Flat Lace-Fastening Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <p>$48.00</p>
+            </div>  
+        </div>
+    
+    <!-------------- new row----------------->
+    
+    <div class="row">
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j5.webp"></a>
+                <h4>Flat Heel gray hoes</h4>
+                <div class="rating">
+                    
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j6.webp"></a>
+                <h4>Lace-Fastening black Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half-o" ></i>
+                </div>
+                <p>$21.00</p>
+            </div>
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j7.webp"></a>
+                <h4>HRX Men's cotton socks</h4>
+                <div class="rating">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <p>$09.00</p>
+            </div>
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j8.webp"></a>
+                <h4>Lace-Up Running Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <p>$35.00</p>
+            </div>  
+        </div>
+    <!--new row for the latest product-->
+        <div class="row">
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j9.webp"></a>
+                <h4>HRX cotton socks</h4>
+                <div class="rating">
+                    
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <p>$10.00</p>
+            </div>
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j1.webp"></a>
+                <h4>Flat Lace-Fastening Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half-o" ></i>
+                </div>
+                <p>$48.00</p>
+            </div>
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j11.webp"></a>
+                <h4>Loafers Men (Gray)</h4>
+                <div class="rating">
+                    <i class="fa fa-star-o" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <p>$15.00</p>
+            </div>
+            <div class="col-4">
+                <a href="products-details.html"><img src="./assets/images/j12.webp"></a>
+                <h4>Lace-Fastening white Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <p>$21.00</p>
+            </div>  
+        </div>
+    
+        <div class="page-btn">
+            <a href="page1.html"><span>1</span></a>
+            <a href="products2.html"><span>2</span></a>
+            <a href="page3.html"><span>3</span></a>
+            <a href="page4.html"><span>4</span></a>
+            <a href="next_page.html"><span>&#8594;</span></a>
+        </div>
+        
+    
+</div>
+<style>
+  /* Add this CSS to your existing stylesheet or in a <style> tag in the <head> section of your HTML document */
+.logo {
+    margin-right: 50px; /* Adjust the value as needed to move the logo to the left */
+}
+
+</style>
+<!-- ... Previous HTML content ... -->
+
+
+
+<link rel="stylesheet" href="./assets/css/product.css">
+
+<script src="./assets/js/script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

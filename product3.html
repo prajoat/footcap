@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footcap - Find your footware</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/product.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload banner
+  -->
+  
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.svg" width="160" height="50" alt="Footcap logo">
+      </a>
+
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.svg" width="190" height="50" alt="Footcap logo">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Products</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Shop</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="nav-action-list">
+
+          <li>
+            <button class="nav-action-btn">
+              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+
+              <span class="nav-action-text">Search</span>
+            </button>
+          </li>
+
+          <li>
+            <a href="#" class="nav-action-btn">
+              <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+              <span class="nav-action-text">Login / Register</span>
+            </a>
+          </li>
+
+          <li>
+            <button class="nav-action-btn">
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+              <span class="nav-action-text">Wishlist</span>
+
+              <data class="nav-action-badge" value="5" aria-hidden="true">5</data>
+            </button>
+          </li>
+
+          <li>
+            <button class="nav-action-btn">
+              <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
+
+              <data class="nav-action-text" value="318.00">Basket: <strong>$318.00</strong></data>
+
+              <data class="nav-action-badge" value="4" aria-hidden="true">4</data>
+            </button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <div class="small-container single-product">
+            
+            
+    <!--<h2 class="title" >Featured Products</h2>-->
+    <div class="row">
+            <div class="col-2">
+                <img src="./assets/images/nike2.webp" width="100%" id="productImg">
+                
+                
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="./assets/images/nike2.webp" width="100%" class="small-img">
+                    </div>
+                     <div class="small-img-col">
+                        <img src="./assets/images/nikep2.png" width="100%" class="small-img">
+                    </div>
+                     <div class="small-img-col">
+                        <img src="./assets/images/nikeP3.png" width="100%" class="small-img">
+                    </div>
+                     <div class="small-img-col">
+                        <img src="./assets/images/nikeP4.png" width="100%" class="small-img">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-2">
+                <p>mens</p>
+                <h1>Nike Struture 25</h1>
+                <h4>RS.6999.0</h4>
+                <select id="size-select">
+                  <option>Select Size</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+              </select>
+              
+                <input type="number" id="quantity-input" value="1">
+                <button id="add-to-cart" class="btn">Add to Cart</button>
+                <h3>Product Details <i class="fa fa-indent" ></i></h3>
+                <br>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <a href="products2.html"><p>View More</p></a>
+        </div>
+    </div>
+    <script>
+      document.getElementById('add-to-cart').addEventListener('click', function () {
+        var selectedSize = document.getElementById('size-select').value;
+        var quantity = document.getElementById('quantity-input').value;
+  
+        var selectedItem = {
+          name: 'Downshifter Sports Shoes',
+          size: selectedSize,
+          price: 6999.00,
+          image: './assets/images/nike2.webp',
+          quantity: quantity
+        };
+  
+        var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.push(selectedItem);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+  
+        alert('Item added to cart.'); // You can remove this alert once it's working
+  
+        window.location.href = 'cart.html';
+      });
+    </script>
+    
+            
+    <!----------------------------------products------------------------------------->
+    <div class="small-container">
+         <div class="row">
+                 <div class="col-4">
+                    <a href="products-details.html"><img src="./assets/images/nike1.webp"></a>
+                    <a href="products-details.html"><h4>Air Force 1's</h4></a>
+                    <div class="rating">
+                        
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star-half-o" ></i>
+                        <i class="fa fa-star-o" ></i>
+                    </div>
+                    <p>$50.00</p>
+                </div>
+                <div class="col-4">
+                    <a href="products-details.html"><img src="./assets/images/nike2.webp"></a>
+                    <h4>Lace-Up Running Shoes</h4>
+                    <div class="rating">
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star-half-o" ></i>
+                    </div>
+                    <p>$35.00</p>
+                </div>
+                <div class="col-4">
+                    <a href="products-details.html"><img src="./assets/images/nike6.webp"></a>
+                    <h4>Lace Fastening Shoes</h4>
+                    <div class="rating">
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star-o" ></i>
+                    </div>
+                    <p>$15.00</p>
+                </div>
+                <div class="col-4">
+                    <a href="products-details.html"><img src="./assets/images/nike7.webp"></a>
+                    <h4>Flat Lace-Fastening Shoes</h4>
+                    <div class="rating">
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star-o" ></i>
+                        <i class="fa fa-star-o" ></i>
+                    </div>
+                    <p>$48.00</p>
+                </div>  
+            </div>
+    </div>
+    <script>
+        var productImg=document.getElementById("productImg");
+        var smallImg=document.getElementsByClassName("small-img");
+        
+        smallImg[0].onclick=function(){
+            productImg.src=smallImg[0].src;
+        }
+         smallImg[1].onclick=function(){
+            productImg.src=smallImg[1].src;
+        }
+          smallImg[2].onclick=function(){
+            productImg.src=smallImg[2].src;
+        }
+           smallImg[3].onclick=function(){
+            productImg.src=smallImg[3].src;
+        }
+        
+        
+    </script>
+</body>
+</html>

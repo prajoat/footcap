@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Center the Home button */
+        .center-button {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkout</h1>
+    
+    <h2>Subtotal: <span id="checkout-total"></span></h2>
+    
+    <!-- Payment Options -->
+    <h2>Payment Options</h2>
+    <label>
+        <input type="radio" name="paymentMethod" value="creditCard"> Credit Card
+    </label>
+    <label>
+        <input type="radio" name="paymentMethod" value="upi"> UPI
+    </label>
+    <label>
+        <input type="radio" name="paymentMethod" value="cod"> Cash on Delivery (COD)
+    </label>
+    
+    <!-- Billing Information -->
+    <h2>Billing Information</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <br>
+        
+        <!-- Credit Card Details (initially hidden) -->
+        <div id="creditCardDetails" style="display: none;">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber">
+            <br>
+            <label for="expiration">Expiration Date:</label>
+            <input type="text" id="expiration">
+            <br>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv">
+            <br>
+        </div>
+
+        <!-- UPI ID field (initially hidden) -->
+        <div id="upiId" style="display: none;">
+            <label for="upi">UPI ID:</label>
+            <input type="text" id="upi">
+            <br>
+        </div>
+
+        <!-- Residence Address fields (initially hidden) -->
+        <div id="residenceAddress" style="display: none;">
+            <label for="streetAddress">Street Address:</label>
+            <input type="text" id="streetAddress">
+            <br>
+            <label for="city">City:</label>
+            <input type="text" id="city">
+            <br>
+            <label for="state">State:</label>
+            <input type="text" id="state">
+            <br>
+            <label for="zipCode">ZIP Code:</label>
+            <input type="text" id "zipCode">
+            <br>
+        </div>
+
+        
+    </form>
+    <a href="purchasecpmplete.html">
+        <button>Purchase</button>
+    </a>
+    <!-- Center the Home button -->
+    <div class="center-button">
+        <a href="index.html">
+            <button>Home</button>
+        </a>
+    </div>
+    
+    <script>
+        // Retrieve the subtotal from Local Storage
+        var subtotal = localStorage.getItem('subtotal');
+      
+        // Display the subtotal on the page
+        if (subtotal) {
+            document.getElementById('checkout-total').textContent = 'Rs:' + parseFloat(subtotal).toFixed(2);
+        }
+
+        // Toggle visibility of credit card details, UPI ID, and residence address fields
+        const paymentMethodRadios = document.querySelectorAll('input[name="paymentMethod"]');
+        const creditCardDetails = document.getElementById('creditCardDetails');
+        const upiId = document.getElementById('upiId');
+        const residenceAddress = document.getElementById('residenceAddress');
+
+        paymentMethodRadios.forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (radio.value === 'creditCard') {
+                    creditCardDetails.style.display = 'block';
+                    upiId.style.display = 'none';
+                    residenceAddress.style.display = 'none';
+                } else if (radio.value === 'upi') {
+                    creditCardDetails.style.display = 'none';
+                    upiId.style.display = 'block';
+                    residenceAddress.style.display = 'none';
+                } else if (radio.value === 'cod') {
+                    creditCardDetails.style.display = 'none';
+                    upiId.style.display = 'none';
+                    residenceAddress.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
