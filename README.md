@@ -11,7 +11,7 @@
 
   <h2 align="center">Footcap - eCommerce website</h2>
 
-  Footcap is fully responsive ecommerce website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
+  Footcap is fully responsive ecommerce website, <br />Responsive for all devices, built using HTML,Flask, CSS, and JavaScript.
 
   <a href="https://codewithsadee.github.io/footcap/"><strong>➥ Live Demo</strong></a>
 
